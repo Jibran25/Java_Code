@@ -1,5 +1,7 @@
 import java.awt.*;
-// import java.swing.*;
+import java.util.*;
+import javax.swing.JOptionPane;
+
 import java.awt.event.*;
 
 class Calculator implements ActionListener
@@ -68,6 +70,16 @@ class Calculator implements ActionListener
             win.add(aboutme);
             win.add(exit);
     
+            b1.addActionListener(this);
+            b2.addActionListener(this);
+            b3.addActionListener(this);
+            b4.addActionListener(this);
+            b5.addActionListener(this);
+
+            clear.addActionListener(this);
+            aboutme.addActionListener(this);
+            exit.addActionListener(this);
+
             win.setBounds(0,0, 500, 500);
             win.show();
         
@@ -79,11 +91,23 @@ class Calculator implements ActionListener
             int a = Integer.parseInt(s1);
             int b = Integer.parseInt(s2);
 
-            if(e.getSource() = b1) text3.setText('' + (a+b));
-            if(e.getSource() = b2) text3.setText('' + (a-b));
-            if(e.getSource() = b3) text3.setText('' +  a*b);
-            if(e.getSource() = b4) text3.setText('' +  a/b);
-            if(e.getSource() = b5) text3.setText('' +  a%b);
+            if(e.getSource() == b1) text3.setText("" + (a+b));
+            if(e.getSource() == b2) text3.setText("" + (a-b));
+            if(e.getSource() == b3) text3.setText("" +  a*b);
+            if(e.getSource() == b4) text3.setText("" +  a/b);
+            if(e.getSource() == b5) text3.setText("" +  a%b);
+
+            if(e.getSource() == clear){
+                text1.setText("");
+                text2.setText("");
+                text3.setText("");
+            }
+             if (e.getSource() == aboutme) {
+                JOptionPane.showMessageDialog(null,"Jibran Ali");
+             }  if (e.getSource() == exit) {
+                 System.exit(0);
+             } 
+          
         }
 
  
