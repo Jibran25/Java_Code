@@ -1,6 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
-
+//Code for Faculty
 class Faculty {
     public static void main(String args[]) {
         Frame win = new Frame("Faculty Management");
